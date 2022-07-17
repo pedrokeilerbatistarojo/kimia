@@ -6,18 +6,16 @@ class WordFinder
 {
 
     private array $arr;
-    private string $word;
 
-    public function __construct(array  $arr, $word)
+    public function __construct(array  $arr)
     {
         $this->arr  = $arr;
-        $this->word = $word;
     }
 
-    public function longestWord(): string
+    public function longestWord(string $word): string
     {
         $constWord = array();
-        $wordSplit = str_split($this->word);
+        $wordSplit = str_split($word);
         $wordConstructed = array();
         $result = '';
 

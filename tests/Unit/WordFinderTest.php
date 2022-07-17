@@ -13,8 +13,8 @@ class WordFinderTest extends BaseTest
         $arr = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'];
         $str = 'ajsxuytcnhre';
 
-        $finder = new WordFinder($arr, $str);
+        $finder = new WordFinder($arr);
 
-        $this->assertEquals('saturn', $finder->longestWord());
+        $this->assertEquals('saturn', $finder->longestWord($str));
     }
 }
