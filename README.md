@@ -3,7 +3,8 @@
 
 # instruction
 1 - Download the project test <br>
-2 - Run the test to PHPUnit <br>
+2 - Composer install
+3 - Run the test to PHPUnit <br>
     .\vendor\bin\phpunit tests
 
 The tests are located in the tests/Unit directory.
