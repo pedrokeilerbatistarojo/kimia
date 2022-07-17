@@ -1,0 +1,47 @@
+
+SQL
+(1)
+(a)
+SELECT * 
+FROM goals	
+WHERE beauty > 0.9 OR beauty < 0.1
+
+(b)
+SELECT players.id
+FROM players
+INNER JOIN goals ON goals.player_id=players.id
+
+
+(c)
+SELECT players.id
+FROM goals
+INNER JOIN players ON players.id=goals.player_id
+WHERE players.market_value < 8.0
+Having Count(goals.id) > 9
+
+(d)
+SELECT COUNT(goals.id) as goals_number, players.team, players.homeland
+FROM goals
+INNER JOIN players ON players.id=goals.player_id
+WHERE goals.`at` > '2020-04-22 00:00:00' AND goals.`at` < '2020-04-22 23:59:59' 
+
+(e)
+
+SELECT players.team, AVG(goals.beauty) as avg
+FROM goals
+INNER JOIN players ON players.id=goals.player_id
+WHERE players.team = 'PSG'
+
+(2)
+SELECT players.id as player_id, goals.id as goal_id
+FROM players
+LEFT JOIN goals ON goals.player_id=players.id
+
+To perform the following operation, a left join is needed since it is required to return all the records of the player table.
+
+
+(3)
+SELECT COUNT(players.id), players.team
+FROM players
+LEFT JOIN goals ON goals.player_id=players.id
+WHERE goals.player_id IS NULL
